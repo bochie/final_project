@@ -1,0 +1,33 @@
+<h1>Listing prodcuts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Name</th>
+      <th>Qty on hand</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prodcuts.each do |prodcut| %>
+      <tr>
+        <td><%= prodcut.product_id %></td>
+        <td><%= prodcut.name %></td>
+        <td><%= prodcut.qty_on_hand %></td>
+        <td><%= prodcut.price %></td>
+        <td><%= link_to 'Show', prodcut %></td>
+        <td><%= link_to 'Edit', edit_prodcut_path(prodcut) %></td>
+        <td><%= link_to 'Destroy', prodcut, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prodcut', new_prodcut_path %>

@@ -1,0 +1,35 @@
+<h1>Listing payment_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Payment type</th>
+      <th>Card number</th>
+      <th>Expiry year</th>
+      <th>Expiry month</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payment_types.each do |payment_type| %>
+      <tr>
+        <td><%= payment_type.customer_id %></td>
+        <td><%= payment_type.payment_type %></td>
+        <td><%= payment_type.card_number %></td>
+        <td><%= payment_type.expiry_year %></td>
+        <td><%= payment_type.expiry_month %></td>
+        <td><%= link_to 'Show', payment_type %></td>
+        <td><%= link_to 'Edit', edit_payment_type_path(payment_type) %></td>
+        <td><%= link_to 'Destroy', payment_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment type', new_payment_type_path %>

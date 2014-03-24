@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @payment_type.customer_id %>
+</p>
+
+<p>
+  <strong>Payment type:</strong>
+  <%= @payment_type.payment_type %>
+</p>
+
+<p>
+  <strong>Card number:</strong>
+  <%= @payment_type.card_number %>
+</p>
+
+<p>
+  <strong>Expiry year:</strong>
+  <%= @payment_type.expiry_year %>
+</p>
+
+<p>
+  <strong>Expiry month:</strong>
+  <%= @payment_type.expiry_month %>
+</p>
+
+<%= link_to 'Edit', edit_payment_type_path(@payment_type) %> |
+<%= link_to 'Back', payment_types_path %>

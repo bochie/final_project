@@ -1,4 +1,18 @@
 FinalProject::Application.routes.draw do
+  resources :payment_types
+
+  resources :shipping_addresses
+
+  resources :customers
+
+  resources :bill_addresses
+
+  resources :prodcuts
+
+  resources :order_lists
+
+  resources :orders
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

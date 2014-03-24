@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @bill_address.customer_id %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @bill_address.country %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @bill_address.address %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @bill_address.postal_code %>
+</p>
+
+<p>
+  <strong>State province:</strong>
+  <%= @bill_address.state_province %>
+</p>
+
+<%= link_to 'Edit', edit_bill_address_path(@bill_address) %> |
+<%= link_to 'Back', bill_addresses_path %>

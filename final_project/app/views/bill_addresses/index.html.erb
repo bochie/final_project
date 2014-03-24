@@ -1,0 +1,35 @@
+<h1>Listing bill_addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Country</th>
+      <th>Address</th>
+      <th>Postal code</th>
+      <th>State province</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bill_addresses.each do |bill_address| %>
+      <tr>
+        <td><%= bill_address.customer_id %></td>
+        <td><%= bill_address.country %></td>
+        <td><%= bill_address.address %></td>
+        <td><%= bill_address.postal_code %></td>
+        <td><%= bill_address.state_province %></td>
+        <td><%= link_to 'Show', bill_address %></td>
+        <td><%= link_to 'Edit', edit_bill_address_path(bill_address) %></td>
+        <td><%= link_to 'Destroy', bill_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bill address', new_bill_address_path %>
