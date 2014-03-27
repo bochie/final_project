@@ -1,11 +1,11 @@
 class CreateBillAddresses < ActiveRecord::Migration
   def change
     create_table :bill_addresses do |t|
-      t.integer :customer_id
-      t.string :country
-      t.string :address
-      t.string :postal_code
-      t.string :state_province
+      t.references :customers
+      t.string :country, null: false
+      t.string :address, null: false
+      t.string :postal_code, null: false
+      t.string :state_province, null: false
 
       t.timestamps
     end

@@ -1,10 +1,10 @@
 class CreateOrderLists < ActiveRecord::Migration
   def change
     create_table :order_lists do |t|
-      t.integer :product_id
-      t.integer :order_id
-      t.integer :num_ordered
-      t.decimal :price
+      t.references :product
+      t.references :order
+      t.integer :num_ordered, precision: 5, null: false
+      t.decimal :price, precision: 5, scale: 2, null: false
 
       t.timestamps
     end
