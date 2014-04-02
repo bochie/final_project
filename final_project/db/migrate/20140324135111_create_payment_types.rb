@@ -5,7 +5,7 @@ class CreatePaymentTypes < ActiveRecord::Migration
       t.string :payment_type, null: false
       t.integer :card_number, null: false, precision: 16
       t.integer :expiry_year, null: false, precision: 2
-      t.integer :expiry_month null: false, precision: 2
+      t.integer :expiry_month, null: false, precision: 2
 
       t.timestamps
     end
