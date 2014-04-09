@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FinalProject</title>
+  <title>Bill's Dive Shop</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= image_tag 'diveShop.png', class: 'logo' %>
+    <h1 id="title">Bill's Dive Shop</h1>
+    <section id="topNav">
+      <nav>
+        <ol>
+          <li class="accountNav"><a href="#">Sign in</a></li>
+          <li class="accountNav"><a href="#">Register</a></li>
+          <li class="accountNav"><a href="#">Log Out</a></li>
+        </ol>
+      </nav>
+    </section>
+    <section id="search">
+      <p>Search our equipment:</p>
+      <form>
+        <input name="search" type="search" />
+        <button type="submit">Search</button>
+      </form>
+    </section>
+  </header>
+    <section id="leftNav">
+      <nav>
+        <ol>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Air Tanks</a></li>
+          <li><a href="#">Masks</a></li>
+          <li><a href="#">Wetsuits & Drysuits</a></li>
+          <li><a href="#">Buoyancy Control Device(BCD)</a></li>
+          <li><a href="#">Regulators</a></li>
+          <li><a href="#">Air Hoses</a></li>
+          <li><a href="#">Miscellaneous</a></li>
+          <li><a href="#">All Products</a></li>
+        </ol>
+      </nav>
+    </section>
+    <section class="clearFix"></section>
+    <footer>
+      <%= image_tag 'diveShop.png', class: 'logo' %>
+      <%= image_tag 'PADI_Flag.jpg', id: 'padi' %>
+      <section id="bottomNav">
+        <nav>
+          <ol>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Equipment</a></li>
+            <li><a href="#">Sign in</a></li>
+          </ol>
+        </nav>
+      </section>
+    </footer>
 
-<%= yield %>
 
 </body>
 </html>

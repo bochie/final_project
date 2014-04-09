@@ -1,0 +1,114 @@
+ a:link, a:visited{
+	color: #0066BC;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: Verdana;
+}
+
+a:hover, a:active{
+	color: #FF0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+ol{
+	list-style: none;
+}
+
+.clearFix{
+	clear:both;
+}
+
+.logo{
+	padding-top:10px;
+	width:220px;
+	height:140px;
+}
+
+#title{
+	text-align:center;
+	margin-top:-120px;
+	font-size: 70px;
+}
+
+#padi{
+	padding-top:10px;
+	width:220px;
+	height:140px;
+	float:right;
+}
+
+header{
+	height:160px;
+	border-bottom:thin solid black;
+}
+
+footer{
+	height:160px;
+	border-top:thin solid black;
+}
+
+#leftNav{
+	float: left;
+	border-right:thin solid black;
+}
+
+#leftNav > nav > ol {
+	padding-left: 40px;
+	display:block;
+	width:300px;
+	margin: 0px -25px;
+	
+}
+
+#leftNav > nav > ol > li{
+	padding:10px 0px;
+	box-sizing:border-box;
+	font-size: 13px;
+}
+
+.accountNav{
+	border:thin solid black;
+}
+
+#topNav > nav{
+	float:right;
+	width:250px;
+	margin-top:-125px;
+}
+
+#topNav > nav > ol{
+	display:inline-block;
+	margin:0px auto;
+}
+
+#topNav > nav > ol > li{
+	display:inline-block;
+	font-size:13px;
+	padding:0px 5px;
+	font-weight: none;
+}
+
+#search{
+	float:right;
+	margin-top:-45px;
+}
+
+#bottomNav > nav{
+	margin-left:auto;
+	margin-right:auto;
+	width:400px;
+	margin-top:-30px;
+}
+
+#bottomNav > nav > ol{
+	display:inline-block;
+	margin:0px auto;
+}
+
+#bottomNav > nav > ol > li{
+	display:inline-block;
+	font-size:12px;
+	padding:0px 5px;
+	font-weight: none;
+}

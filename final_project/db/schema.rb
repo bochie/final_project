@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402204054) do
+ActiveRecord::Schema.define(version: 20140409152355) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -48,10 +48,17 @@ ActiveRecord::Schema.define(version: 20140402204054) do
 
   create_table "bill_addresses", force: true do |t|
     t.integer  "customers_id"
-    t.string   "country",        null: false
     t.string   "address",        null: false
     t.string   "postal_code",    null: false
     t.string   "state_province", null: false
+    t.integer  "customer_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name",        null: false
+    t.text     "description", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,8 +73,8 @@ ActiveRecord::Schema.define(version: 20140402204054) do
   end
 
   create_table "order_lists", force: true do |t|
-    t.integer  "product_id"
-    t.integer  "order_id"
+    t.integer  "product_id",                          null: false
+    t.integer  "order_id",                            null: false
     t.integer  "num_ordered",                         null: false
     t.decimal  "price",       precision: 5, scale: 2, null: false
     t.datetime "created_at"
@@ -76,7 +83,9 @@ ActiveRecord::Schema.define(version: 20140402204054) do
 
   create_table "orders", force: true do |t|
     t.integer  "customers_id"
-    t.decimal  "total_cost",   precision: 5, scale: 2, null: false
+    t.decimal  "total_cost",     precision: 5, scale: 2, null: false
+    t.integer  "order_lists_id",                         null: false
+    t.integer  "customer_id",                            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -87,25 +96,26 @@ ActiveRecord::Schema.define(version: 20140402204054) do
     t.integer  "card_number",  null: false
     t.integer  "expiry_year",  null: false
     t.integer  "expiry_month", null: false
+    t.integer  "customer_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "products", force: true do |t|
-    t.integer  "product_id",                          null: false
     t.string   "name",                                null: false
     t.integer  "qty_on_hand",                         null: false
     t.decimal  "price",       precision: 5, scale: 2, null: false
+    t.integer  "category_id",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "shipping_addresses", force: true do |t|
     t.integer  "customers_id"
-    t.string   "country",        null: false
     t.string   "address",        null: false
     t.string   "postal_code",    null: false
     t.string   "state_province", null: false
+    t.integer  "category_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

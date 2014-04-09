@@ -1,4 +1,9 @@
-FinalProject::Application.routes.draw do, ActiveAdmin::Devise.config
+FinalProject::Application.routes.draw do
+  get "home/index"
+  resources :categories
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+ ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :products
 
@@ -20,7 +25,7 @@ FinalProject::Application.routes.draw do, ActiveAdmin::Devise.config
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'index#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
