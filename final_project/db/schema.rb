@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409152355) do
+ActiveRecord::Schema.define(version: 20140410012118) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20140409152355) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "bill_addresses", force: true do |t|
-    t.integer  "customers_id"
     t.string   "address",        null: false
     t.string   "postal_code",    null: false
     t.string   "state_province", null: false
@@ -64,7 +63,6 @@ ActiveRecord::Schema.define(version: 20140409152355) do
   end
 
   create_table "customers", force: true do |t|
-    t.integer  "order_id"
     t.string   "first_name",    null: false
     t.string   "last_name",     null: false
     t.string   "email_address", null: false
@@ -83,15 +81,13 @@ ActiveRecord::Schema.define(version: 20140409152355) do
 
   create_table "orders", force: true do |t|
     t.integer  "customers_id"
-    t.decimal  "total_cost",     precision: 5, scale: 2, null: false
-    t.integer  "order_lists_id",                         null: false
-    t.integer  "customer_id",                            null: false
+    t.decimal  "total_cost",   precision: 5, scale: 2, null: false
+    t.integer  "customer_id",                          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "payment_types", force: true do |t|
-    t.integer  "customers_id"
     t.string   "payment_type", null: false
     t.integer  "card_number",  null: false
     t.integer  "expiry_year",  null: false
@@ -110,14 +106,7 @@ ActiveRecord::Schema.define(version: 20140409152355) do
     t.datetime "updated_at"
   end
 
-  create_table "shipping_addresses", force: true do |t|
-    t.integer  "customers_id"
-    t.string   "address",        null: false
-    t.string   "postal_code",    null: false
-    t.string   "state_province", null: false
-    t.integer  "category_id",    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "shipping_addresses" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
