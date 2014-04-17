@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
   belongs_to :category
   has_many :order_lists
-  mount_uploader :attachment, AttachmentUploader
+  mount_uploader :attachment, ImageUploader
 end

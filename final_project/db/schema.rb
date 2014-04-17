@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410012118) do
+ActiveRecord::Schema.define(version: 20140417170806) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -70,6 +70,13 @@ ActiveRecord::Schema.define(version: 20140410012118) do
     t.datetime "updated_at"
   end
 
+  create_table "images", force: true do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "order_lists", force: true do |t|
     t.integer  "product_id",                          null: false
     t.integer  "order_id",                            null: false
@@ -99,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140410012118) do
 
   create_table "products", force: true do |t|
     t.string   "name",                                null: false
+    t.string   "attachment",                          null: false
     t.integer  "qty_on_hand",                         null: false
     t.decimal  "price",       precision: 5, scale: 2, null: false
     t.integer  "category_id",                         null: false
