@@ -1,0 +1,5 @@
+class UpdateTables < ActiveRecord::Migration
+  def change
+    
+  end
+end
