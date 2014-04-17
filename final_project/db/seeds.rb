@@ -13,3 +13,4 @@
     Category.create(name: 'Air Hoses', description: 'Air hoses are used in underwater diving, such as scuba diving, to carry air from the surface or from air tanks or diving pumps to the diver. Air hoses are therefore a necessary part of standard diving dress and any type of surface supplied diving equipment. They are an essential part of scuba diving equipment, used to deliver pressurised air from the first stage of a diving regulator to the other components.')
     Category.create(name: 'Miscellaneous', description: 'This contains other less common items that one might take diving.')
     Customer.create(first_name: 'Matt', last_name: 'Boch', email_address: 'mboch94@gmail.com')
+    Customer.create(first_name: 'David', last_name: 'Mendez', email_address: 'dmakldfj@gmail.com')
