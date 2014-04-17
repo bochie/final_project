@@ -21,8 +21,6 @@
         <td><%= order_list.num_ordered %></td>
         <td><%= order_list.price %></td>
         <td><%= link_to 'Show', order_list %></td>
-        <td><%= link_to 'Edit', edit_order_list_path(order_list) %></td>
-        <td><%= link_to 'Destroy', order_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
